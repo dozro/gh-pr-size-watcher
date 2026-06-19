@@ -44,6 +44,20 @@ inputs:
       Labels that should be excluded from size calculation.
     default: ""
     required: false
+  stickyComment:
+    description: >
+      If true, only one comment will be added to a PR. It will be updated if PR size changes and comment already exists.
+    default: "false"
+    required: false
+  recreateComment:
+    description: >
+      If true, the bot will delete old comments and only keep the newest
+    default: "true"
+    required: false
+  stickyCommentHeader:
+    description: Identifier for the sticky comment header
+    default: "pr-size-watcher"
+    required: false
 runs:
   using: "node20"
   main: "dist/index.js"
